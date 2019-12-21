@@ -1,0 +1,78 @@
+\documentclass[UTF8,fancyhdr,a4paper]{ctexart}
+
+\title{中文latex排版用法笔记-ctex,XeTeX,Linux}
+\author{李鹏飞}
+\date{2019-12-15}
+
+\usepackage[margin = 1in]{geometry}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{40pt}
+\pagestyle{fancy}
+%\pagestyle{myheadings}
+%\markright {李鹏飞\hfill 业余爱好 \hfill}
+\fancyhead[l]{我的Logo}
+\lhead{\includegraphics[width = 1cm]{YinYang.jpg}}
+\fancyhead[c]{文档名称}
+\fancyhead[r]{文档密级}
+\lfoot{12-21-2019}
+\cfoot{保密信息，未经授权禁止扩散}
+\rfoot{page number}
+\usepackage{lastpage}
+\rfoot{第\thepage 页，共 \pageref{LastPage} 页}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{1pt}
+
+\usepackage{tocloft}
+\tocloftpagestyle{fancy}
+%\usepackage[titles]{tocloft}
+%\usepackage{hyperref}
+
+\begin{document}
+\begin{titlepage}
+\maketitle
+\pagenumbering{gobble}
+\centering
+\vspace{10cm}
+\includegraphics[width = 0.2\textwidth]{YinYang.jpg}\par
+\vspace{1cm}
+{\huge pengfei.li2017@outlook.com}\par
+\vspace{0.5cm}
+{\small 版权所有，侵权必究}\par
+\vspace{0.5cm}
+{\scshape \small All Rights Reserved}
+\end{titlepage}
+\pagenumbering{roman}
+\tableofcontents
+\addcontentsline{toc}{section}{目录}
+\clearpage
+\listoffigures
+\addcontentsline{toc}{section}{插图}
+%\addcontentsline{toc}{chapter}{List of Figures}
+\clearpage
+\listoftables
+\addcontentsline{toc}{section}{表格}
+%\addcontentsline{toc}{chapter}{List of Tables}
+
+%\clearpage \maketitle
+%%\pagenumbering{gobble}
+%\thispagestyle{empty}
+
+\newpage
+\pagenumbering{arabic}
+\section{第一个 Section}
+第一页第一个 section
+\subsection{第一个subsection}
+
+\newpage
+\section{第二个Section}
+
+\newpage
+\section{第三个Section}
+
+\newpage
+\section{第四个Section}
+
+
+
+\end{document}
