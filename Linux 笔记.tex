@@ -36,6 +36,8 @@
 %\usepackage[titles]{tocloft}
 
 \usepackage[xetex]{hyperref}
+\usepackage{xcolor}
+\newcommand{\pflred}[1]{\textcolor{red}{#1}}
 
 \begin{document}
 
@@ -116,7 +118,18 @@ windows10 home edition 不允许 remote desktop，虽然系统有这个选项询
 \begin{enumerate}
 \item 使用 TightVNC:\\
 网址：https://www.tightvnc.com/download.php
-在 windows10 直接安装 TightVNC，一路安装不用改任何东西，安装完毕。设置require authentication，设置密码。
+在 windows10 直接安装 TightVNC，一路安装不用改任何东西，安装完毕。设置require authentication，设置密码。\\
+
+\pflred
+{TightVNC 的一些问题：
+\begin{itemize}
+\item VNC 有些时候不稳定，需要重启系统，有可能是 VPN 的问题。
+\item VNC 用 laptop 的 touch pad 右键不好使，只能用鼠标。
+\end{itemize}
+}
+
+
+
 \item 使用 RDPwrapper 在 github 下又下载:\\
 不推荐这个使用方法，CSDN 上很多人反映不可用，而且下载的时候 chrome 会报错。另外还有修改注册表的，不推荐使用。
 \item 在 linux 系统下安装 remmina:\\
@@ -135,6 +148,17 @@ sudo apt-get install remmina remmina-plugin-*\\
 \item 直接登录，出现内部错误：这个是由于 VPN 的作用，关掉在开启即可。
 \item 登录之后发现闪退：这是由于 linux 没有安装 xfce4。\\ sudo apt-get install xfce4。\par
 百度搜索，通过 windows RDP 连接 Linux。
+
+\pflred{如果这时候出现所说的Ubuntu安中装的xrdp，桌面共享设置为允许，虚拟机设置的是桥接，虚拟机内外可以互相ping 通；
+在Windows下用 mstsc 连接Ubuntu桌面，跳出账号密码页面，登录后自动退出（闪退）的解决方法：sudo apt-get install xfce4
+echo xfce4-session > \~/.xsession
+touch .session
+sudo vim /etc/xrdp/startwm.sh
+在. /etc/X11/Xsession前面加
+xfce4-session
+然后重启 sudo service xrdp restart。}
+
+
 \end{enumerate}
 
 
