@@ -76,9 +76,9 @@
 \section{Linux common commands}
 
 \subsection{Notes on 20200101}
-\begin{enumerate}
-\item
-check ip addresses of all users in local subnet:\\
+
+\subsubsection{check ip addresses of all users in local subnet}
+
 sudo nmap -sn 192.168.0.0/24\\
 results:\\
 Starting Nmap 7.60 ( https://nmap.org ) at 2020-01-01 17:14 CST\\
@@ -107,19 +107,13 @@ Nmap scan report for pengfei-KLV-WX9 (192.168.0.107)\\
 Host is up.\\
 Nmap done: 256 IP addresses (8 hosts up) scanned in 4.61 seconds\\
 
-
-
-
-\end{enumerate}
-
 \subsection{Linux remote desktop windows10 home edition}
 windows10 home edition 不允许 remote desktop，虽然系统有这个选项询问你是否允许 remote desktop，但是在另一个地方又告诉你 home edition 是没有这个功能的。
 以下是解决方案：
 \begin{enumerate}
-\item 使用 TightVNC:\\
-网址：https://www.tightvnc.com/download.php
+\item 使用 TightVNC:
+网址：\url{https://www.tightvnc.com/download.php}
 在 windows10 直接安装 TightVNC，一路安装不用改任何东西，安装完毕。设置require authentication，设置密码。\\
-
 \pflred
 {TightVNC 的一些问题：
 \begin{itemize}
@@ -162,56 +156,41 @@ xfce4-session
 \end{enumerate}
 
 
-\subsection{Title page 的设置}
-使用 begin titlepage 环境，对 title page 进行自定义设置，如图片的插入等;
-\subsection{Header 和 Footer 的设置}
-这里使用了 fancyhdr package。注意 Lastpage package 的使得 left pagefoot 的页码特特效，第 X 页，共 X 页;
-\subsection{toc 或者目录的设置}
-使用了 tocloft package。注意这个 package 会覆盖 fancyhdr 的功能，需要命令 tocloftpagestyle（fancy），强行保留 fancyhdr 的功能;\par
-hyperef 的使用：注意在 xelatex 编辑环境下。\textbackslash usepackage [xetex] \{ hyperref \},注意 [\space] 中间的选项一定要添加 xetex。\par 
-意外发现：\textbackslash[ \space ]\textbackslash ，中间竟然可以输入公式。如下：
-\[ x = y^2 \]
+\subsection{查找文档命令 find}
 
-
-\subsection{特殊字符的输入}
-
+find + [target directory] + [options] + [file or folder name]:
 \begin{enumerate}
 \item
-字符输入：一般使用 \textbackslash \space 作为前导。比如 \{ 的输入：Latex 命令为，\textbackslash \{。
-
-\item 
-\S \space dollar sign 的使用: 成对使用，用于输入公式，例子如下：
-Inline equations input: \$some equations\$, e.g. $\partial T^2/\partial x^2 + \partial T^2/\partial y^2 =\frac{k}{\rho*c_p}*{\partial T/\partial t} $
-
+target directory:
+Period (.): Specifies the current and all nested folders.
+Forward Slash (/): Specifies the entire filesystem.
+Tilde (\~): Specifies the active user's home directory.
 \item
-\textasciitilde 符号的输入有些特殊，必须加入 ascii 关键词：\textbackslash textasciitilde
+options:
+-name or -atime n
+\item
+file or folder name:
+* start sign represents wild card.
+\item
+one example:
+
+find . -name *.tex
+\item
+reference:
+\url	{https://www.lifewire.com/uses-of-linux-command-find-2201100}
+
 
 \end{enumerate}
 
-\subsection{字体的基本设置}
 
-
-
-%\addcontentsline{toc}{section}{目录} 这个命令将 toc，tof，tot都加入了目录页中。
-\subsection{页码的设置}
-使用命令：\textbackslash pagenumbering \{ gobble \}
 
 \newpage
 \section{第二个Section}
 
 \subsection{接下来要做的事情}
 \begin{enumerate}
-\item
-URL 的输入
-\item
-Texworks 的 Linux 安装
-\item
-Bibliography 的引入
-\item
-图片的插入及基本设计
-\item
-表格的插入及基本设置
-
+\item 1
+\item 2
 
 
 \end{enumerate}
